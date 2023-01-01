@@ -2,7 +2,7 @@ import React from 'react';
 import delevary from "../../../assets/images/delivery.png";
 import HeroBg from "../../../assets/images/hero.png";
 import '../Home.css'
-//banner
+//..banner
 const Banner = () => {
     return (
       <div className=' grid grid-cols-1 md:grid-cols-2 gap-2'> 
