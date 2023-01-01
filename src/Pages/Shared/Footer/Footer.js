@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from "../../../assets/images/logo-1.png";
-
+//footer
 const Footer = () => {
     return (
       <footer className="footer p-10  text-base-content">
