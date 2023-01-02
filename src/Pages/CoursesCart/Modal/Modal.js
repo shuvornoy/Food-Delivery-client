@@ -7,7 +7,7 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 
 
 const Modal = ({ modal, setModal }) => {
-  const { name: product, price: productPrice } = modal;
+  const { name: product, price: productPrice, image: photo } = modal;
   const { user } = useContext(AuthContext);
 
   const handleBooking = (event) => {
@@ -44,6 +44,7 @@ const Modal = ({ modal, setModal }) => {
         }
       });
   };
+
   return (
     <>
       <input type="checkbox" id="my-modal" className="modal-toggle" />
@@ -56,6 +57,9 @@ const Modal = ({ modal, setModal }) => {
             ✕
           </label>
           <h3 className="text-lg font-bold">{product}</h3>
+          <div>
+            <img src={photo} alt="" />
+          </div>
           <form
             onSubmit={handleBooking}
             className="grid grid-cols-1 gap-3 mt-10"
@@ -101,7 +105,7 @@ const Modal = ({ modal, setModal }) => {
             <input
               name="location"
               type="text"
-              placeholder="Meeting Location"
+              placeholder="Location"
               className="input w-full input-bordered"
             />
             <br />
