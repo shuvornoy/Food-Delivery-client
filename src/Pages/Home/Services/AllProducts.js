@@ -12,7 +12,7 @@ const AllProducts = () => {
     queryKey: ["doctors"],
     queryFn: async () => {
       try {
-        const res = await fetch(" http://localhost:5000/allProducts", {
+        const res = await fetch(" https://food-city-server.vercel.app/allProducts", {
           headers: {
             authorization: `bearer ${localStorage.getItem("accessToken")}`,
           },

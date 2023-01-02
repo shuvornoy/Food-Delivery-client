@@ -88,7 +88,7 @@ const router = createBrowserRouter([
         path: "/dashboard/payment/:id",
         element: <Payment></Payment>,
         loader: ({ params }) =>
-          fetch(` http://localhost:5000/orders/${params.id}`),
+          fetch(` https://food-city-server.vercel.app/orders/${params.id}`),
       },
     ],
   },
