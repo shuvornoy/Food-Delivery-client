@@ -46,7 +46,6 @@ const ManageDoctors = () => {
                 <th>Photo</th>
                 <th>Name</th>
                 <th>Resale Price</th>
-                <th>Years of use</th>
                 <th>Category</th>
                 <th>Original Price</th>
               </tr>
@@ -64,7 +63,6 @@ const ManageDoctors = () => {
                   </td>
                   <td>{doctor.name}</td>
                   <td>{doctor.price}</td>
-                  <td>{doctor.years}</td>
                   <td>{doctor.category}</td>
                   
                   <td>

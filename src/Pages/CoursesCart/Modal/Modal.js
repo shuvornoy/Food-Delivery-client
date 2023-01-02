@@ -7,7 +7,7 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 
 
 const Modal = ({ modal, setModal }) => {
-  const { name: product, price: productPrice, image: photo } = modal;
+  const { name: product, price: productPrice, image: photo, description } = modal;
   const { user } = useContext(AuthContext);
 
   const handleBooking = (event) => {
@@ -52,7 +52,7 @@ const Modal = ({ modal, setModal }) => {
         <div className="modal-box relative">
           <label
             htmlFor="my-modal"
-            className="btn btn-sm btn-circle absolute right-2 top-2"
+            className="btn btn-outline btn-error btn-sm btn-circle absolute right-2 top-2"
           >
             ✕
           </label>
@@ -60,6 +60,9 @@ const Modal = ({ modal, setModal }) => {
           <div>
             <img src={photo} alt="" />
           </div>
+          <h1 className='text-3xl bold'>{product}</h1>
+          <p>{description}</p>
+          <h3 className='font-bold'>Price : ${productPrice}</h3>
           <form
             onSubmit={handleBooking}
             className="grid grid-cols-1 gap-3 mt-10"
@@ -70,7 +73,7 @@ const Modal = ({ modal, setModal }) => {
               defaultValue={user?.displayName}
               disabled
               placeholder="Your Name"
-              className="input w-full input-bordered"
+              className="input w-full input-bordered hidden"
             />
             <input
               name="email"
@@ -78,7 +81,7 @@ const Modal = ({ modal, setModal }) => {
               defaultValue={user?.email}
               disabled
               placeholder="Email Address"
-              className="input w-full input-bordered"
+              className="input w-full input-bordered hidden"
             />
             <input
               name="name"
@@ -86,7 +89,7 @@ const Modal = ({ modal, setModal }) => {
               disabled
               defaultValue={product}
               placeholder="Phone Number"
-              className="input w-full input-bordered"
+              className="input w-full input-bordered hidden"
             />
             <input
               name="price"
@@ -94,7 +97,7 @@ const Modal = ({ modal, setModal }) => {
               disabled
               defaultValue={productPrice}
               placeholder="Price"
-              className="input w-full input-bordered"
+              className="input w-full input-bordered hidden"
             />
             <input
               name="phone"
@@ -110,9 +113,9 @@ const Modal = ({ modal, setModal }) => {
             />
             <br />
             <input
-              className="btn btn-accent w-full"
+              className="btn btn-warning w-full"
               type="submit"
-              value="Submit"
+              value="Buy Now"
             />
           </form>
         </div>
