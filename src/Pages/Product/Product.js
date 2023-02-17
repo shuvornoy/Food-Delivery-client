@@ -1,10 +1,10 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import CoursesCart from '../CoursesCart/CoursesCart';
+import ProductCart from '../ProductCart/ProductCart';
 
-const Courses = () => {
-  const courses = useLoaderData();
-  console.log(courses)
+const Product = () => {
+  const Product = useLoaderData();
+  console.log(Product)
     return (
       <div>
        
@@ -12,7 +12,7 @@ const Courses = () => {
           <div className="row">
             <div className="col-xl-8 col-md-8">
             {
-               courses?.map(singleCourse =><CoursesCart key={singleCourse._id} singleCourse={singleCourse} ></CoursesCart> )
+               Product?.map(singleCourse =><ProductCart key={singleCourse._id} singleCourse={singleCourse} ></ProductCart> )
             }
             </div>
           </div>
@@ -21,4 +21,4 @@ const Courses = () => {
     );
 };
 
-export default Courses;
+export default Product;

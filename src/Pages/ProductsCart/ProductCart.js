@@ -3,7 +3,7 @@ import './cart.css'
 
 
 //product card
-const CoursesCart = ({ singleCourse, setModal }) => {
+const ProductCart = ({ singleCourse, setModal }) => {
   const { description, image, price, name} =
     singleCourse;
 
@@ -39,5 +39,5 @@ const CoursesCart = ({ singleCourse, setModal }) => {
   );
 };
 
-export default CoursesCart;
+export default ProductCart;
 

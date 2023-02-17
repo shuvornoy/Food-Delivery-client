@@ -3,10 +3,10 @@ import DashboardLayout from "../../Layout/DashboardLayout";
 import Main from "../../Layout/Main";
 import Blog from "../../Pages/Blog/Blog";
 // import Appointment from "../../Pages/Appointment/Appointment/Appointment";
-// import Courses from "../../Pages/Course/Course";
-import AddDoctor from "../../Pages/Dashboard/AddDoctor/AddDoctor";
+// import Product from "../../Pages/Course/Course";
+import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
 import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
-import ManageDoctors from "../../Pages/Dashboard/ManageDoctors/ManageDoctors";
+import ManageProducts from "../../Pages/Dashboard/ManageProduct/ManageProduct"
 import MyAppointment from "../../Pages/Dashboard/MyAppointment/MyAppointment";
 import Payment from "../../Pages/Dashboard/Payment/Payment";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
@@ -69,18 +69,18 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/dashboard/adddoctor",
+        path: "/dashboard/AddProduct",
         element: (
           <SellerRoute>
-            <AddDoctor></AddDoctor>
+            <AddProduct></AddProduct>
           </SellerRoute>
         ),
       },
       {
-        path: "/dashboard/managedoctors",
+        path: "/dashboard/ManageProducts",
         element: (
           <SellerRoute>
-            <ManageDoctors></ManageDoctors>
+            <ManageProducts></ManageProducts>
           </SellerRoute>
         ),
       },

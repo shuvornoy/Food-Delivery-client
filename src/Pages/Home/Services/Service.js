@@ -7,7 +7,7 @@ const Service = ({ service }) => {
   const { setFilter } = useContext(AuthContext);
 
   const { data: products } = useQuery({
-    queryKey: ["doctors"],
+    queryKey: ["Produc"],
     queryFn: async () => {
       try {
         const res = await fetch(" https://food-city-server.vercel.app/allProducts", {

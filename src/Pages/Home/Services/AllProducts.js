@@ -1,15 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
-import CoursesCart from './../../CoursesCart/CoursesCart';
-import Modal from '../../CoursesCart/Modal/Modal'
+import ProductCart from './../../ProductsCart/ProductCart';
+import Modal from '../../ProductsCart/Modal/Modal'
 
 
 const AllProducts = () => {
   const [modal, setModal] = useState(null);
 
 
-  const {data: doctors} = useQuery({
-    queryKey: ["doctors"],
+  const {data: Produc} = useQuery({
+    queryKey: ["Produc"],
     queryFn: async () => {
       try {
         const res = await fetch(" https://food-city-server.vercel.app/allProducts", {
@@ -26,12 +26,12 @@ const AllProducts = () => {
   return (
     <div className="px-5 my-10">
       <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-5">
-        {doctors?.map((singleCourse, i) => (
-          <CoursesCart
+        {Produc?.map((singleCourse, i) => (
+          <ProductCart
             key={singleCourse._id}
             singleCourse={singleCourse}
             setModal={setModal}
-          ></CoursesCart>
+          ></ProductCart>
         ))}
       </div>
       { modal &&

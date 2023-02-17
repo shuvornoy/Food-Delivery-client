@@ -3,8 +3,8 @@ import doctor from "../../../assets/images/doctor.png";
 import appointment from "../../../assets/images/appointment.png";
 import PrimaryButton from "../../../components/PrimaryButton/PrimaryButton";
 
-const Leptop = () => {
-  //product
+const Products = () => {
+  //products
   return (
     <section
       className="mt-32"
@@ -40,4 +40,4 @@ const Leptop = () => {
   );
 };
 
-export default Leptop;
+export default Products;

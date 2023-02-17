@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
 import Loading from '../../Shared/Loading/Loading';
 //all product
-const ManageDoctors = () => {
+const ManageProducts = () => {
     const [deletingDoctor, setDeletingDoctor] = useState(null);
 
     const closeModal = () => {
@@ -11,8 +11,8 @@ const ManageDoctors = () => {
     }
 
 
-    const { data: doctors, isLoading, } = useQuery({
-        queryKey: ['doctors'],
+    const { data: Produc, isLoading, } = useQuery({
+        queryKey: ['Produc'],
         queryFn: async () => {
             try {
                 const res = await fetch(' https://food-city-server.vercel.app/allProducts', {
@@ -37,7 +37,7 @@ const ManageDoctors = () => {
 
     return (
       <div>
-        <h2 className="text-3xl">Advertised items: {doctors?.length}</h2>
+        <h2 className="text-3xl">Advertised items: {Produc?.length}</h2>
         <div className="overflow-x-auto">
           <table className="table w-full">
             <thead>
@@ -51,7 +51,7 @@ const ManageDoctors = () => {
               </tr>
             </thead>
             <tbody>
-              {doctors.map((doctor, i) => (
+              {Produc.map((doctor, i) => (
                 <tr key={doctor._id}>
                   <th>{i + 1}</th>
                   <td>
@@ -93,4 +93,4 @@ const ManageDoctors = () => {
     );
 };
 
-export default ManageDoctors;
+export default ManageProducts;

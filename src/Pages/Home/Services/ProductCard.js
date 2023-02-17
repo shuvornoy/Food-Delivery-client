@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../contexts/AuthProvider";
-import CoursesCart from './../../CoursesCart/CoursesCart';
-import Modal from '../../CoursesCart/Modal/Modal'
+import ProductCart from './../../ProductsCart/ProductCart';
+import Modal from '../../ProductsCart/Modal/Modal'
 
 
 const ProductCard = () => {
@@ -10,8 +10,8 @@ const ProductCard = () => {
   const [modal, setModal] = useState(null);
   const { filter } = useContext(AuthContext);
 
-  const {data: doctors} = useQuery({
-    queryKey: ["doctors"],
+  const {data: Produc} = useQuery({
+    queryKey: ["Produc"],
     queryFn: async () => {
       try {
         const res = await fetch(" https://food-city-server.vercel.app/allProducts", {
@@ -28,47 +28,47 @@ const ProductCard = () => {
   useEffect(() => {
     
           if(filter === "Chicken"){
-              const filter = doctors?.filter((item)=>item.category === "Chicken")
+              const filter = Produc?.filter((item)=>item.category === "Chicken")
               setCatagory(filter)
           }
           if(filter === "Curry"){
-              const filter = doctors?.filter((item)=>item.category === "Curry")
+              const filter = Produc?.filter((item)=>item.category === "Curry")
               setCatagory(filter)
           }
           
 
           if(filter === "Rice"){
-              const filter = doctors?.filter((item)=>item.category === "Rice")
+              const filter = Produc?.filter((item)=>item.category === "Rice")
               setCatagory(filter)
           }
           if(filter === "Fish"){
-            const filter = doctors?.filter((item)=>item.category === "Fish")
+            const filter = Produc?.filter((item)=>item.category === "Fish")
             setCatagory(filter)
         }
         if(filter === "Fruits"){
-          const filter = doctors?.filter((item)=>item.category === "Fruits")
+          const filter = Produc?.filter((item)=>item.category === "Fruits")
           setCatagory(filter)
       }
       if(filter === "Icecreams"){
-        const filter = doctors?.filter((item)=>item.category === "Icecreams")
+        const filter = Produc?.filter((item)=>item.category === "Icecreams")
         setCatagory(filter)
     }      if(filter === "Soft Drinks"){
-        const filter = doctors?.filter((item)=>item.category === "Soft Drinks")
+        const filter = Produc?.filter((item)=>item.category === "Soft Drinks")
         setCatagory(filter)
     }
   }, []);
-  console.log(catagory)
+  // console.log(catagory)
 
 
   return (
     <div className="px-5 my-10">
       <div className="grid gap-6 grid-cols-4 md:grid-cols-4 lg:grid-cols-5">
         {catagory?.map((singleCourse, i) => (
-          <CoursesCart
+          <ProductCart
             key={singleCourse._id}
             singleCourse={singleCourse}
             setModal={setModal}
-          ></CoursesCart>
+          ></ProductCart>
         ))}
       </div>
       { modal &&

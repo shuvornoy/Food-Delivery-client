@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 // import Loading from '../../Shared/Loading/Loading';
 
-const AddDoctor = () => {
+const AddProduct = () => {
   const {
     register,
     handleSubmit,
@@ -15,7 +15,7 @@ const AddDoctor = () => {
   const imageHostKey = process.env.REACT_APP_imgbb_key;
 
   const navigate = useNavigate();
-  const handleAddDoctor = (data) => {
+  const handleAddProduct = (data) => {
     const image = data.image[0];
     const formData = new FormData();
     formData.append("image", image);
@@ -55,7 +55,7 @@ const AddDoctor = () => {
             .then((result) => {
               console.log(result);
               toast.success(`${data.name} is added successfully`);
-              navigate("/dashboard/managedoctors");
+              navigate("/dashboard/ManageProducts");
             });
         }
       });
@@ -69,7 +69,7 @@ const AddDoctor = () => {
     <div className="">
       <form
         className="flex justify-center mt-10"
-        onSubmit={handleSubmit(handleAddDoctor)}
+        onSubmit={handleSubmit(handleAddProduct)}
       >
         <div className="grid grid-cols-1 gap-4 ">
           <h2 className="text-4xl">Add A Product</h2>
@@ -237,4 +237,4 @@ const AddDoctor = () => {
 };
 
 
-export default AddDoctor;
+export default AddProduct;

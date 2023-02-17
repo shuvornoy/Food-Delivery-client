@@ -40,10 +40,10 @@ const DashboardLayout = () => {
               {isSeller && (
                 <>
                   <li>
-                    <Link to="/dashboard/adddoctor">Add A Product</Link>
+                    <Link to="/dashboard/AddProduct">Add A Product</Link>
                   </li>
                   <li>
-                    <Link to="/dashboard/managedoctors">Manage Product</Link>
+                    <Link to="/dashboard/ManageProducts">Manage Product</Link>
                   </li>
                 </>
               )}
