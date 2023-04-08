@@ -32,13 +32,15 @@ const Service = ({ service }) => {
 
   const { button } = service;
   return (
-       <div className="card w-48 h-28  bg-base-100 shadow-xl">
-         <button className="h-48 text-center bg-orange-400"  onClick={() => Submit(button)}>
-          <h2 className="text-2xl">{button}</h2>
-            <div className="card-actions justify-end">
-            </div>
-        </button>
-      </div>
+    <div className="card lg:w-40 md:w-36 bg-base-100 shadow-xl">
+      <button
+        className="h-22 text-center bg-orange-400"
+        onClick={() => Submit(button)}
+      >
+        <h2 className="text-xl">{button}</h2>
+        <div className="card-actions justify-end"></div>
+      </button>
+    </div>
   );
 };
 

@@ -13,16 +13,37 @@ const Navbar = () => {
             .catch(err => console.log(err));
     }
 
-    const menuItems = <React.Fragment>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/blog">Blog</Link></li>
-        {user?.uid ?
-            <>
-                <li><Link to="/dashboard">Dashboard</Link></li>
-                <li><button onClick={handleLogOut}>Sign out</button></li>
-            </>
-            : <li><Link to="/login">Login</Link></li>}
-    </React.Fragment>
+    const menuItems = (
+      <React.Fragment>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
+        <li>
+          <Link to="/blog">About</Link>
+        </li>
+        <li>
+          <Link to="/product">Product</Link>
+        </li>
+
+        {user?.uid ? (
+          <>
+            <li>
+              <Link to="/dashboard">Booking</Link>
+            </li>
+            <li>
+              <button onClick={handleLogOut}>Sign out</button>
+            </li>
+          </>
+        ) : (
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+        )}
+      </React.Fragment>
+    );
 
     return (
         <div className="navbar bg-base-100 flex py-5 justify-between text-2xl">
